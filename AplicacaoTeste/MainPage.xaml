@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    CBTPRDM - ADS 671 - Trabalho Pratico 01
+    App MAUI com os campos ID e Pass, botao OK (valida admin / senha@dmin),
+    botao Limpar (limpa os campos e reposiciona o cursor) e botao Creditos
+    (mostra os autores do app).
+    Nome: Igor Flores - cb3021734
+-->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AplicacaoTeste.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="Black">
+
+    <VerticalStackLayout Padding="25" Spacing="25">
+
+        <Label Text="Aplicação Teste"
+               FontSize="30"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center" />
+
+        <Grid RowSpacing="10" ColumnSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0"
+                   Text="ID:"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center" />
+
+            <Entry Grid.Row="0" Grid.Column="1"
+                   x:Name="txtId"
+                   BackgroundColor="White"
+                   TextColor="Black" />
+
+            <Label Grid.Row="1" Grid.Column="0"
+                   Text="Pass"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center" />
+
+            <Entry Grid.Row="1" Grid.Column="1"
+                   x:Name="txtSenha"
+                   IsPassword="True"
+                   BackgroundColor="White"
+                   TextColor="Black" />
+        </Grid>
+
+        <VerticalStackLayout Spacing="10" Margin="0,60,0,0">
+
+            <Button x:Name="btnOk"
+                    Text="OK"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    BackgroundColor="#C0C0C0"
+                    TextColor="#8B0000"
+                    Clicked="OnOkClicked" />
+
+            <Button x:Name="btnLimpar"
+                    Text="Limpar"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    BackgroundColor="#C0C0C0"
+                    TextColor="#8B0000"
+                    Clicked="OnLimparClicked" />
+
+            <Button x:Name="btnCreditos"
+                    Text="Créditos"
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    BackgroundColor="#C0C0C0"
+                    TextColor="#8B0000"
+                    Clicked="OnCreditosClicked" />
+
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>

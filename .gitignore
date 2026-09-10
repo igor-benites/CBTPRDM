@@ -1,0 +1,31 @@
+## .NET / Visual Studio
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+build/
+
+## Rider / VS Code
+.idea/
+.vscode/
+
+## MAUI / mobile
+*.ap_
+*.apk
+*.aab
+*.ipa
+
+## OS files
+.DS_Store
+Thumbs.db
