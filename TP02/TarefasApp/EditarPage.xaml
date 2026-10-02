@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    CBTPRDM - ADS 671 - Trabalho Pratico 02
+    Modal de edicao: ja vem com os dados da tarefa preenchidos e permite
+    alterar titulo, descricao, data de criacao e prioridade.
+    Nome: Igor Flores - cb3021734
+    Nome: Isabela Salgueiro - Cb3030946
+-->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.EditarPage"
+             Title="Editar Tarefa">
+
+    <VerticalStackLayout Padding="20" Spacing="12">
+
+        <Label Text="Titulo" FontAttributes="Bold" />
+        <Entry x:Name="txtTitulo" />
+
+        <Label Text="Descricao" FontAttributes="Bold" />
+        <Entry x:Name="txtDescricao" />
+
+        <Label Text="Data de Criacao" FontAttributes="Bold" />
+        <DatePicker x:Name="dtpData" Format="dd/MM/yyyy" />
+
+        <Label Text="Prioridade" FontAttributes="Bold" />
+        <Picker x:Name="pckPrioridade" Title="Selecione a prioridade">
+            <Picker.Items>
+                <x:String>Alta</x:String>
+                <x:String>Media</x:String>
+                <x:String>Baixa</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button x:Name="btnSalvar"
+                Text="Salvar"
+                FontSize="18"
+                Margin="0,20,0,0"
+                Clicked="OnSalvarClicked" />
+
+        <Button x:Name="btnCancelar"
+                Text="Cancelar"
+                FontSize="18"
+                Clicked="OnCancelarClicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    CBTPRDM - ADS 671 - Trabalho Pratico 02
+    Pagina inicial: lista as tarefas em um ListView mostrando titulo e descricao.
+    Tocar em um item abre a pagina de detalhes, o botao Adicionar abre o modal
+    de cadastro de uma nova tarefa.
+    Nome: Igor Flores - cb3021734
+    Nome: Isabela Salgueiro - Cb3030946
+-->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.MainPage"
+             Title="Minhas Tarefas">
+
+    <Grid RowSpacing="10" Padding="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+               Text="Lista de Tarefas"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <ListView Grid.Row="1"
+                  x:Name="listViewTarefas"
+                  HasUnevenRows="True"
+                  ItemSelected="OnTarefaSelecionada">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout Padding="10,8">
+                            <Label Text="{Binding Titulo}"
+                                   FontSize="18"
+                                   FontAttributes="Bold" />
+                            <Label Text="{Binding Descricao}"
+                                   FontSize="14"
+                                   TextColor="Gray" />
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Grid.Row="2"
+                x:Name="btnAdicionar"
+                Text="Adicionar"
+                FontSize="18"
+                FontAttributes="Bold"
+                Clicked="OnAdicionarClicked" />
+
+    </Grid>
+
+</ContentPage>

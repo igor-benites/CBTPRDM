@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    CBTPRDM - ADS 671 - Trabalho Pratico 02
+    Pagina de detalhes da tarefa: mostra titulo, descricao, data de criacao e
+    prioridade, com os botoes Editar (abre o modal de edicao) e Excluir
+    (pede confirmacao antes de remover).
+    Nome: Igor Flores - cb3021734
+    Nome: Isabela Salgueiro - Cb3030946
+-->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.DetalhePage"
+             Title="Detalhes da Tarefa">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Titulo" FontAttributes="Bold" TextColor="Gray" />
+        <Label x:Name="lblTitulo" FontSize="22" />
+
+        <Label Text="Descricao" FontAttributes="Bold" TextColor="Gray" />
+        <Label x:Name="lblDescricao" FontSize="18" />
+
+        <Label Text="Data de Criacao" FontAttributes="Bold" TextColor="Gray" />
+        <Label x:Name="lblData" FontSize="18" />
+
+        <Label Text="Prioridade" FontAttributes="Bold" TextColor="Gray" />
+        <Label x:Name="lblPrioridade" FontSize="18" />
+
+        <Button x:Name="btnEditar"
+                Text="Editar"
+                FontSize="18"
+                Margin="0,30,0,0"
+                Clicked="OnEditarClicked" />
+
+        <Button x:Name="btnExcluir"
+                Text="Excluir"
+                FontSize="18"
+                BackgroundColor="#B00020"
+                TextColor="White"
+                Clicked="OnExcluirClicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
