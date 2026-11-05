@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    CBTPRDM - ADS 671 - Trabalho Pratico 03
+    Pagina de resultados: mostra status, datas, localizacao atual e o
+    historico de eventos do pacote, tudo por data binding com o ViewModel.
+    Nome: Igor Flores - cb3021734
+    Nome: Isabela Salgueiro - Cb3030946
+-->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RastreioApp.ResultadoPage"
+             Title="Resultado do Rastreio">
+
+    <Grid Padding="20" RowSpacing="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0" Spacing="4">
+
+            <Label Text="Codigo do Pacote" FontAttributes="Bold" TextColor="Gray" />
+            <Label Text="{Binding Pacote.Id}" FontSize="20" />
+
+            <Label Text="Status Atual" FontAttributes="Bold" TextColor="Gray" Margin="0,8,0,0" />
+            <Label Text="{Binding Pacote.Status}" FontSize="20" TextColor="#1B5E20" />
+
+            <Label Text="Data de Envio" FontAttributes="Bold" TextColor="Gray" Margin="0,8,0,0" />
+            <Label Text="{Binding Pacote.DataEnvio, StringFormat='{0:dd/MM/yyyy}'}" FontSize="18" />
+
+            <Label Text="Previsao de Entrega" FontAttributes="Bold" TextColor="Gray" Margin="0,8,0,0" />
+            <Label Text="{Binding Pacote.DataPrevista, StringFormat='{0:dd/MM/yyyy}'}" FontSize="18" />
+
+            <Label Text="Localizacao Atual" FontAttributes="Bold" TextColor="Gray" Margin="0,8,0,0" />
+            <Label Text="{Binding Pacote.LocalizacaoAtual}" FontSize="18" />
+
+        </VerticalStackLayout>
+
+        <Label Grid.Row="1"
+               Text="Historico de Eventos"
+               FontSize="20"
+               FontAttributes="Bold"
+               Margin="0,15,0,0" />
+
+        <ListView Grid.Row="2"
+                  x:Name="listViewHistorico"
+                  ItemsSource="{Binding Historico}"
+                  HasUnevenRows="True"
+                  SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout Padding="10,8">
+                            <Label Text="{Binding Descricao}"
+                                   FontSize="16"
+                                   FontAttributes="Bold" />
+                            <Label Text="{Binding Local}"
+                                   FontSize="14"
+                                   TextColor="Gray" />
+                            <Label Text="{Binding Data, StringFormat='{0:dd/MM/yyyy HH:mm}'}"
+                                   FontSize="13"
+                                   TextColor="Gray" />
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+
+</ContentPage>

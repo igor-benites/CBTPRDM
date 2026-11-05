@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    CBTPRDM - ADS 671 - Trabalho Pratico 03
+    Pagina inicial: o cliente digita o codigo de rastreamento e aciona a busca.
+    Os controles estao ligados ao RastreamentoViewModel por data binding.
+    Nome: Igor Flores - cb3021734
+    Nome: Isabela Salgueiro - Cb3030946
+-->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RastreioApp.MainPage"
+             Title="Rastreio de Pacotes">
+
+    <VerticalStackLayout Padding="25" Spacing="18" VerticalOptions="Center">
+
+        <Label Text="Rastreamento de Pacotes"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Label Text="Informe o codigo de rastreamento:"
+               FontSize="16" />
+
+        <Entry x:Name="txtCodigo"
+               Placeholder="Ex.: BR123456789SP"
+               Text="{Binding CodigoRastreamento}"
+               FontSize="18" />
+
+        <Button Text="Rastrear"
+                FontSize="18"
+                FontAttributes="Bold"
+                Command="{Binding BuscarCommand}" />
+
+        <Label Text="{Binding Mensagem}"
+               TextColor="#B00020"
+               FontSize="15"
+               IsVisible="{Binding TemMensagem}" />
+
+        <Label Text="Codigos para teste: BR123456789SP, BR987654321RJ, BR555444333MG"
+               FontSize="12"
+               TextColor="Gray"
+               Margin="0,30,0,0" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
